@@ -3,4 +3,12 @@
     <string name="fragment_top_rated">Top Rated</string>
     <string name="fragment_popular">Popular</string>
     <string name="fragment_favorite">Favorite</string>
+    <string name="movie_summary">Summary</string>
+    <string name="movie_trailers">Trailers</string>
+    <string name="movie_reviews">Reviews</string>
+    <string name="toast_message">In order to play a trailer, please turn on your internet connection!</string>
+    <string name="rating_builder">%s/10</string>
+    <string name="shared_movie_title">Recommended movie for you: %s</string>
+    <string name="shared_movie_message">Description: %s\nVote average: %s\nRelease date: %s</string>
+    <string name="shared_choice">Your choice....</string>
 </resources>

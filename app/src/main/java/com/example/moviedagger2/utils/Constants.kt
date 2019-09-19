@@ -1,6 +1,6 @@
 package com.example.moviedagger2.utils
 
-const val KEY = "key"
+const val KEY = "KEY"
 const val BASE_URL = "https://api.themoviedb.org/3/"
 
 const val POSTER_URL = "https://image.tmdb.org/t/p/w185";

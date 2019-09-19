@@ -5,6 +5,7 @@ import com.example.moviedagger2.di.scope.MovieScope
 import com.example.moviedagger2.fragment.FavoriteFragment
 import com.example.moviedagger2.fragment.PopularFragment
 import com.example.moviedagger2.fragment.TopRatedFragment
+import com.example.moviedagger2.ui.MovieDetailsActivity
 import dagger.Component
 
 @Component(dependencies = [RetrofitComponent::class], modules = [MovieModule::class])
@@ -14,4 +15,5 @@ interface MovieComponent {
     fun injectFavorite(favoriteFragment: FavoriteFragment)
     fun injectTopRated(topRatedFragment: TopRatedFragment)
     fun injectPopular(popularFragment: PopularFragment)
+    fun injectDetails(activity: MovieDetailsActivity)
 }

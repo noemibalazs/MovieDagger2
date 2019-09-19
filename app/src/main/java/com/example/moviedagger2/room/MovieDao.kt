@@ -17,4 +17,7 @@ interface MovieDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun addMovie2DB(entity: MovieEntity)
+
+    @Query("SELECT COUNT(id) FROM movie_table")
+    fun getRows(): LiveData<Int>
 }

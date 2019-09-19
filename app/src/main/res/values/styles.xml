@@ -14,4 +14,9 @@
         <item name="android:textAppearance">@style/Base.TextAppearance.AppCompat.Subhead</item>
     </style>
 
+    <style name="AppStyle" parent="ThemeOverlay.AppCompat.Dark.ActionBar" >
+        <item name="android:textColorSecondary">@color/colorPrimary</item>
+        <item name="android:textColorPrimary">@color/custom</item>
+    </style>
+
 </resources>

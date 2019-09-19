@@ -58,3 +58,14 @@ fun View.setOnDebounceClickListener(clicked: (View) -> Unit){
 
     })
 }
+fun String.drop(text:String):String{
+    return text.drop(31)
+}
+
+fun entity2Movie(entity: MovieEntity): Movie{
+    return if (entity.posterPath.startsWith(POSTER_URL)){
+        Movie(entity.id, entity.title, entity.description, entity.releaseDate, entity.rating, entity.posterPath.drop(entity.posterPath))
+    }else{
+        Movie(entity.id, entity.title, entity.description, entity.releaseDate, entity.rating, entity.posterPath)
+    }
+}
