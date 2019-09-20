@@ -11,9 +11,7 @@ const val YOUTUBE_END = "/0.jpg"
 
 const val ZERO = 0
 const val ONE = 1
-const val TWO = 2
 
 const val MOVIE_ID = "movie_id"
-const val MOVIE_NAME = "movie_name"
 const val MOVIE_DB = "movie_db"
 

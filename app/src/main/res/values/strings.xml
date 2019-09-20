@@ -11,4 +11,6 @@
     <string name="shared_movie_title">Recommended movie for you: %s</string>
     <string name="shared_movie_message">Description: %s\nVote average: %s\nRelease date: %s</string>
     <string name="shared_choice">Your choice....</string>
+    <string name="toast_review">Sorry, no reviews!</string>
+    <string name="toast_trailer">Sorry, no trailers!</string>
 </resources>

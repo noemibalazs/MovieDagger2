@@ -19,12 +19,12 @@ import com.example.moviedagger2.utils.getYoutubeScreenShot
 import com.example.moviedagger2.utils.loadPicture
 
 
-class TrailerAdapter(val context: Context, val trailers: MutableList<Trailer>) :
+class TrailerAdapter( val trailers: MutableList<Trailer>) :
     RecyclerView.Adapter<TrailerAdapter.TrailerViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TrailerViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.movie_trailer, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.movie_trailer, parent, false)
         return TrailerViewHolder(view)
     }
 
@@ -38,10 +38,10 @@ class TrailerAdapter(val context: Context, val trailers: MutableList<Trailer>) :
         holder.name.text = trailer.name
 
         val link = getYoutubeScreenShot(trailer.key)
-        context.loadPicture(link, holder.picture)
+        holder.picture.context.loadPicture(link, holder.picture)
 
         holder.picture.setOnClickListener {
-            checkConnectionAndPlay(getMovieYoutubePath(trailer.key))
+            checkConnectionAndPlay(getMovieYoutubePath(trailer.key), holder)
         }
     }
 
@@ -51,7 +51,8 @@ class TrailerAdapter(val context: Context, val trailers: MutableList<Trailer>) :
 
     }
 
-    private fun checkConnectionAndPlay(link: String){
+    private fun checkConnectionAndPlay(link: String, holder:TrailerViewHolder){
+        val context = holder.itemView.context
         val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val info = connectivityManager.activeNetworkInfo
         if (info !=null && info.isConnected){

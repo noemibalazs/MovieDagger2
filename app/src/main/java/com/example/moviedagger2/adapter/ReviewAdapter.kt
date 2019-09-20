@@ -9,10 +9,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.moviedagger2.R
 import com.example.moviedagger2.data.Review
 
-class ReviewAdapter(val context: Context, val reviews:MutableList<Review>): RecyclerView.Adapter<ReviewAdapter.ReviewViewHolder>() {
+class ReviewAdapter(val reviews:MutableList<Review>): RecyclerView.Adapter<ReviewAdapter.ReviewViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ReviewViewHolder {
-        val view = LayoutInflater.from(context).inflate(R.layout.movie_review, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.movie_review, parent, false)
         return ReviewViewHolder(view)
     }
 

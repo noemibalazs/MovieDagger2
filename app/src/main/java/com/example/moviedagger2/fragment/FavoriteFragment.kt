@@ -29,15 +29,19 @@ class FavoriteFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         (activity?.applicationContext as MyApp).movieComponent.injectFavorite(this)
+
+        setRV()
         populateUI()
     }
 
-    private fun populateUI(){
+    private fun setRV(){
         cover_recycle_view.setHasFixedSize(true)
-        val movieList:MutableList<Movie> = mutableListOf()
+    }
 
-        movieDao?.getMovieList()!!.observe(this, Observer {list ->
-            list.forEach{ movieList.add(entity2Movie(it)) }
+    private fun populateUI(){
+        val movieList:MutableList<Movie> = mutableListOf()
+        movieDao?.getMovieList()!!.observe(this, Observer {
+            it.map { item -> movieList.add(entity2Movie(item)) }
             cover_recycle_view.adapter = CoverAdapter(movieList)
         })
     }
